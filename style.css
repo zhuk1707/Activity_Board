@@ -3,8 +3,6 @@
 /*Typography*/
 /*Border*/
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -15,9 +13,145 @@ body {
   background-color: hsl(226deg, 43%, 10%);
 }
 
+.wrapper {
+  min-height: 100vh;
+  padding: 4rem 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard__content {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+  justify-content: center;
+  grid-template-columns: repeat(1, minmax(300px, 330px));
+}
+.dashboard__person {
+  width: 100%;
+  background-color: hsl(235deg, 46%, 20%);
+  border-radius: 2rem;
+}
+.dashboard__item {
+  width: 100%;
+  padding-top: 2.25rem;
+  background-color: #00ff00;
+  border-radius: 2rem;
+  background-repeat: no-repeat;
+  background-position: 92% -8%;
+}
+.dashboard__item_work {
+  background-color: hsl(15deg, 100%, 70%);
+  background-image: url("images/icons/icon-work.svg");
+}
+.dashboard__item_play {
+  background-color: hsl(195deg, 74%, 62%);
+}
+.dashboard__item_study {
+  background-color: hsl(348deg, 100%, 68%);
+}
+.dashboard__item_exercise {
+  background-color: hsl(145deg, 58%, 55%);
+}
+.dashboard__item_sotial {
+  background-color: hsl(264deg, 64%, 52%);
+}
+.dashboard__item_self-care {
+  background-color: hsl(43deg, 84%, 65%);
+}
+.dashboard__item:hover .tracking-card {
+  background-color: #22275d;
+}
+.dashboard__tracking-card {
+  transition: background-color 0.1s ease-in;
+}
+
+.info-card {
+  background-color: hsl(246deg, 80%, 60%);
+  border-radius: 2rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.info-card__image {
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 0 20px hsl(235deg, 45%, 61%);
+  border-radius: 50%;
+}
+.info-card__subtitle {
+  font-size: 12px;
+  font-weight: 300;
+  margin: 0;
+  padding-bottom: 0.25rem;
+  color: hsl(236deg, 100%, 87%);
+}
+.info-card__title {
+  margin: 0 0.5rem 0 0;
+  font-weight: 300;
+}
+
+.selector {
+  padding: 1.25rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.selector__item {
+  font-size: 12px;
+  color: hsl(236deg, 100%, 87%);
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+.selector__item:hover, .selector__item_active {
+  color: white;
+}
+
+.tracking-card {
+  padding: 1.5rem;
+  background-color: hsl(235deg, 46%, 20%);
+  border-radius: 2rem;
+  position: relative;
+  bottom: -2px;
+}
+.tracking-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tracking-card__title {
+  font-weight: 400;
+  font-size: 18px;
+  margin: 1rem 0;
+}
+.tracking-card__menu {
+  cursor: pointer;
+}
+.tracking-card__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tracking-card__time {
+  font-size: 32px;
+  font-weight: 300;
+}
+.tracking-card__prev-period {
+  color: hsl(236deg, 100%, 87%);
+  font-size: 12px;
+  font-weight: 300;
+}
+
 .attribution {
-  font-size: 11px;
+  font-size: 12px;
   text-align: center;
+  padding-bottom: 24px;
+  color: hsl(236deg, 100%, 87%);
 }
 .attribution a {
   color: hsl(228deg, 45%, 44%);

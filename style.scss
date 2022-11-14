@@ -18,30 +18,205 @@ $white: #fafafa;
 $family: 'Roboto', sans-serif;
 $fs-base: 18px;
 
-$weight-light: 300px;
-$weight-regular: 400px;
-$weight-medium: 500px;
+$weight-light: 300;
+$weight-regular: 400;
+$weight-medium: 500;
 
 /*Border*/
-$rad: 1rem;
+$rad: 2rem;
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 body {
+  //margin: 0;
   font-family: $family;
   font-size: $fs-base;
   color: $white;
   background-color: $blue-900;
 }
 
-.attribution {
-  font-size: 11px;
-  text-align: center;
+.wrapper {
+  min-height: 100vh;
+  padding: 4rem .5rem;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard {
+  &__content {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+
+    display: grid;
+    gap: 1.5rem;
+    justify-content: center;
+    grid-template-columns: repeat(1, minmax(300px, 330px));
+  }
+
+  &__person {
+    width: 100%;
+    background-color: $blue-800;
+    border-radius: $rad;
+  }
+
+  &__info-card {
+  }
+
+  &__selector {
+  }
+
+  &__item {
+    width: 100%;
+    padding-top: 2.25rem;
+    background-color: #00ff00;
+    border-radius: $rad;
+
+    background-repeat: no-repeat;
+    background-position: 92% -8%;
+
+    &_work {
+      background-color: $red-100;
+      background-image: url("images/icons/icon-work.svg");
+    }
+
+    &_play {
+      background-color: $blue-100;
+    }
+
+    &_study {
+      background-color: $red-200;
+    }
+
+    &_exercise {
+      background-color: $green-100;
+    }
+
+    &_sotial {
+      background-color: $violet-500;
+    }
+
+    &_self-care {
+      background-color: $orange-100;
+    }
+
+    &:hover .tracking-card {
+      background-color: lighten($blue-800, 5) ;
+    }
+  }
+
+  &__tracking-card {
+    transition: background-color .1s ease-in;
+
+  }
+}
+
+.info-card {
+  background-color: $blue-500;
+  border-radius: $rad;
+  padding: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  &__image {
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 0 20px $blue-400;
+    border-radius: 50%;
+  }
+
+  &__text {
+  }
+
+  &__subtitle {
+    font-size: 12px;
+    font-weight: $weight-light;
+    margin: 0;
+    padding-bottom: .25rem;
+    color: $blue-200;
+  }
+
+  &__title {
+    margin: 0 .5rem 0 0;
+    font-weight: $weight-light;
+  }
+}
+
+.selector {
+  padding: 1.25rem 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__item {
+    font-size: 12px;
+    color: $blue-200;
+    cursor: pointer;
+    transition: .3s ease-in;
+
+    &:hover, &_active   {
+      color: white;
+    }
+  }
+}
+
+.tracking-card {
+  padding: 1.5rem;
+  background-color: $blue-800;
+  border-radius: $rad;
+  position: relative;
+  bottom: -2px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    font-weight: $weight-regular;
+    font-size: $fs-base;
+    margin: 1rem 0;
+  }
+
+  &__menu {
+    cursor: pointer;
+  }
+
+  &__img {
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__time {
+    font-size: 32px;
+    font-weight: $weight-light;
+  }
+
+  &__prev-period {
+    color: $blue-200;
+    font-size: 12px;
+    font-weight: $weight-light;
+  }
+}
+
+.attribution {
+  font-size: 12px;
+  text-align: center;
+  padding-bottom: 24px;
+  color: $blue-200;
   & a {
     color: hsl(228, 45%, 44%);
   }
