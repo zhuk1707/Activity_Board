@@ -43,24 +43,32 @@ body {
   background-repeat: no-repeat;
   background-position: 92% -8%;
 }
+.dashboard__item:hover {
+  opacity: 0.8;
+}
 .dashboard__item_work {
   background-color: hsl(15deg, 100%, 70%);
   background-image: url("images/icons/icon-work.svg");
 }
 .dashboard__item_play {
   background-color: hsl(195deg, 74%, 62%);
+  background-image: url("images/icons/icon-play.svg");
 }
 .dashboard__item_study {
   background-color: hsl(348deg, 100%, 68%);
+  background-image: url("images/icons/icon-study.svg");
 }
 .dashboard__item_exercise {
   background-color: hsl(145deg, 58%, 55%);
+  background-image: url("images/icons/icon-exercise.svg");
 }
-.dashboard__item_sotial {
+.dashboard__item_social {
   background-color: hsl(264deg, 64%, 52%);
+  background-image: url("images/icons/icon-social.svg");
 }
 .dashboard__item_self-care {
   background-color: hsl(43deg, 84%, 65%);
+  background-image: url("images/icons/icon-self-care.svg");
 }
 .dashboard__item:hover .tracking-card {
   background-color: #22275d;
@@ -100,7 +108,6 @@ body {
   padding: 1.25rem 2rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 .selector__item {
   font-size: 12px;
@@ -155,6 +162,57 @@ body {
 }
 .attribution a {
   color: hsl(228deg, 45%, 44%);
+}
+
+@media (min-width: 1024px) {
+  .dashboard__content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .dashboard__person {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .info-card {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-grow: 1;
+  }
+  .info-card__image {
+    margin-bottom: 0.5rem;
+  }
+  .info-card__subtitle {
+    margin-bottom: 0.5rem;
+  }
+  .info-card__title {
+    font-size: 30px;
+  }
+  .selector {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .selector__item:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  .tracking-card__header {
+    margin-bottom: 0.75rem;
+  }
+  .tracking-card__title {
+    margin: 0;
+  }
+  .tracking-card__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .tracking-card__time {
+    font-size: 48px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

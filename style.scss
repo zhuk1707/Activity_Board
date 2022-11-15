@@ -79,6 +79,10 @@ body {
     background-repeat: no-repeat;
     background-position: 92% -8%;
 
+    &:hover {
+      opacity: .8;
+    }
+
     &_work {
       background-color: $red-100;
       background-image: url("images/icons/icon-work.svg");
@@ -86,22 +90,27 @@ body {
 
     &_play {
       background-color: $blue-100;
+      background-image: url("images/icons/icon-play.svg");
     }
 
     &_study {
       background-color: $red-200;
+      background-image: url("images/icons/icon-study.svg");
     }
 
     &_exercise {
       background-color: $green-100;
+      background-image: url("images/icons/icon-exercise.svg");
     }
 
-    &_sotial {
+    &_social {
       background-color: $violet-500;
+      background-image: url("images/icons/icon-social.svg");
     }
 
     &_self-care {
       background-color: $orange-100;
+      background-image: url("images/icons/icon-self-care.svg");
     }
 
     &:hover .tracking-card {
@@ -154,7 +163,7 @@ body {
 
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  //align-items: center;
 
   &__item {
     font-size: 12px;
@@ -219,5 +228,75 @@ body {
   color: $blue-200;
   & a {
     color: hsl(228, 45%, 44%);
+  }
+}
+
+@media (min-width: 1024px) {
+  .dashboard {
+    &__content {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &__person{
+      grid-row-start: 1;
+      grid-row-end: 3;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .info-card {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    flex-grow: 1;
+
+    &__image{
+      margin-bottom: .5rem;
+    }
+
+    &__subtitle {
+      margin-bottom: .5rem;
+    }
+
+    &__title {
+      font-size: 30px;
+    }
+  }
+
+  .selector {
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .tracking-card {
+    &__header {
+      margin-bottom: .75rem;
+    }
+
+    &__title {
+      margin: 0;
+    }
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__time {
+      font-size: 48px;
+    }
   }
 }
